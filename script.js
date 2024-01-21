@@ -9,8 +9,17 @@ const createIcon = () => {
   // Randomise size of snowflake
   const size = Math.random() + 1;
   icon.style.fontSize = `${size}em`;
-  icon.style.top = "0";
-  icon.style.left = "0";
+
+  // Randomise position of snowflake
+  const top = Math.random() * 100;
+  icon.style.top = `${top}vh`;
+
+  const left = Math.random() * 100;
+  icon.style.left = `${left}vw`;
+
+  //Randomise orientation of snowflake
+  const orientation = Math.random() * 360;
+  icon.style.transform = `rotate(${orientation}deg)`;
 
   document.body.appendChild(icon);
 }
