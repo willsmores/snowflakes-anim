@@ -6,8 +6,8 @@ const createIcon = () => {
   // Add Fontawesome classes
   icon.classList.add("icon", "fas", "fa-snowflake");
   icon.style.fontSize = "2em";
-  icon.style.top = "0";
-  icon.style.left = "0";
+  icon.style.top = "50px";
+  icon.style.left = "50px";
 
   document.body.appendChild(icon);
 }

@@ -6,4 +6,5 @@ body {
 .icon {
   position: absolute;
   color: #fff;
+  z-index: 9999;
 }
