@@ -4,5 +4,6 @@ body {
 }
 
 .icon {
+  position: absolute;
   color: #fff;
 }
