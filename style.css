@@ -8,11 +8,26 @@ body {
   position: absolute;
   color: #fff;
   z-index: 9999;
-  animation: snowing linear infinite;
+  animation: snowing linear infinite, fadeInOut 1s;
 }
 
 @keyframes snowing {
   to {
     transform: translate(calc(100vw + 50%), calc(100vh + 50%)) rotate(360deg);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 100%;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
   }
 }
