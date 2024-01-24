@@ -1,11 +1,14 @@
 console.log("Script link working")
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Debugging, to see how many icons are being created
+  let count = 0;
+
   const createIcon = () => {
-    const icon = document.createElement("i");
+    const icon = document.createElement("i")
 
     // Add Fontawesome classes
-    icon.classList.add("icon", "fas", "fa-snowflake");
+    icon.classList.add("icon", "fas", "fa-snowflake", `${count}`);
 
     // Randomise size of snowflake
     const size = Math.random() + 1;
@@ -27,7 +30,16 @@ document.addEventListener("DOMContentLoaded", function() {
     icon.style.animationDuration = `${duration}s`
 
     document.body.appendChild(icon);
+    count++;
+    
+    // Icons will be added to the DOM unless removed
+    // Remove at animation end
+    setTimeout(() => {
+      console.log('Animation ended. Removing icon.');
+      icon.remove();
+  }, parseFloat(icon.style.animationDuration) * 1000);
   }
 
-  createIcon();
+  // Adjusts the intensity of the storm!
+  setInterval(createIcon, 50);
 });
